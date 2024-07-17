@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Stop any existing servers
 pkill node
 
