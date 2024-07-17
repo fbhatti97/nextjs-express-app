@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/nextjs-express-app
+hooks:
+  AfterInstall:
+    - location: deploy_scripts/install_dependencies.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicationStart:
+    - location: deploy_scripts/start_server.sh
+      timeout: 300
+      runas: ec2-user
